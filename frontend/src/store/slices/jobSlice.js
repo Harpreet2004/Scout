@@ -103,7 +103,7 @@ const jobSlice = createSlice({
 export const fetchJobs = (location,niche,searchKeyword = "") => async (dispatch) => {
   try {
     dispatch(jobSlice.actions.requestForAllJobs());
-    let link = "http://localhost:4000/api/v1/job/getall?";
+    let link = "https://scout-bbc2.onrender.com/api/v1/job/getall?";
 
     let queryParams = [];
 
@@ -133,7 +133,7 @@ export const fetchJobs = (location,niche,searchKeyword = "") => async (dispatch)
 export const postNewJob = (data) => async (dispatch) => {
   dispatch(jobSlice.actions.requestForPostJob());
   try {    
-    const response = await axios.post("http://localhost:4000/api/v1/job/post", data, {withCredentials: true, headers: {"Content-Type":"application/json"}});
+    const response = await axios.post("https://scout-bbc2.onrender.com/api/v1/job/post", data, {withCredentials: true, headers: {"Content-Type":"application/json"}});
 
     dispatch(jobSlice.actions.successForPostJob(response.data.message));
     dispatch(jobSlice.actions.clearAllErrors())
@@ -146,7 +146,7 @@ export const fetchSingleJob = (jobid) => async (dispatch) => {
   dispatch(jobSlice.actions.requestForSingleJob());
   try {
     const response = await axios.get(
-      `http://localhost:4000/api/v1/job/get/${jobid}`,
+      `https://scout-bbc2.onrender.com/api/v1/job/get/${jobid}`,
       { withCredentials: true }
     );
     dispatch(jobSlice.actions.successForSingleJob(response.data.data));
@@ -160,7 +160,7 @@ export const getMyJobs = () => async(dispatch) => {
   dispatch(jobSlice.actions.requestForMyJobs());
   try {
     const response = await axios.get(
-      `http://localhost:4000/api/v1/job/myjobs`,
+      `https://scout-bbc2.onrender.com/api/v1/job/myjobs`,
       { withCredentials: true }
     );
     dispatch(jobSlice.actions.successForMyJobs(response.data.data));
@@ -174,7 +174,7 @@ export const deleteMyJob = (id) => async(dispatch) => {
   dispatch(jobSlice.actions.requestForDeleteJob());
   try {
     const response = await axios.delete(
-      `http://localhost:4000/api/v1/job/delete/${id}`,
+      `https://scout-bbc2.onrender.com/api/v1/job/delete/${id}`,
       { withCredentials: true }
     );
     dispatch(jobSlice.actions.successForDeleteJob(response.data.message));
