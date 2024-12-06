@@ -92,7 +92,7 @@ export const register = (data) => async (dispatch) => {
   dispatch(userSlice.actions.registerRequest());
   try {
     const response = await axios.post(
-      "http://localhost:4000/api/v1/user/register",
+      "https://scout-bbc2.onrender.com/api/v1/user/register",
       data,
       {
         withCredentials: true,
@@ -138,7 +138,7 @@ export const login = (data) => async (dispatch) => {
 export const logoutUser = () => async (dispatch) => {
   try {
     const response = await axios.get(
-      "http://localhost:4000/api/v1/user/logout",
+      "https://scout-bbc2.onrender.com/api/v1/user/logout",
       {
         withCredentials: true,
       }
