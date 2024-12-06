@@ -159,7 +159,7 @@ export const getUser = () => async (dispatch) => {
 
   try {
     const response = await axios.get(
-      "http://localhost:4000/api/v1/user/getuser",
+      "https://scout-ui-2an4.onrender.com/api/v1/user/getuser",
       {
         withCredentials: true,
       }
