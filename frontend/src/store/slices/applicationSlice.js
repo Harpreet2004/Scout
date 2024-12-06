@@ -84,7 +84,7 @@ export const fetchJobSeekerApplications = () => async (dispatch) => {
 
   try {
     const response = await axios.get(
-      "http://localhost:4000/api/v1/application/jobseeker/getall",
+      "https://scout-bbc2.onrender.com/api/v1/application/jobseeker/getall",
       { withCredentials: true }
     );
     // console.log(response.data.data)
@@ -104,7 +104,7 @@ export const fetchEmployerApplications = () => async (dispatch) => {
 
   try {
     const response = await axios.get(
-      "http://localhost:4000/api/v1/application/employer/getall",
+      "https://scout-bbc2.onrender.com/api/v1/application/employer/getall",
       { withCredentials: true }
     );
     dispatch(
@@ -125,7 +125,7 @@ export const postApplication = (data, jobId) => async (dispatch) => {
 
   try {
     const response = await axios.post(
-      `http://localhost:4000/api/v1/application/post/${jobId}`,
+      `https://scout-bbc2.onrender.com/api/v1/application/post/${jobId}`,
       data,
       {
         withCredentials: true,
@@ -150,7 +150,7 @@ export const deleteApplication = (deleteId) => async (dispatch) => {
   dispatch(applicationSlice.actions.requestForDeleteApplication());
   try {
     const response = await axios.delete(
-      `http://localhost:4000/api/v1/application/delete/${deleteId}`,
+      `https://scout-bbc2.onrender.com/api/v1/application/delete/${deleteId}`,
       { withCredentials: true }
     );
     dispatch(
