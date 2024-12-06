@@ -116,7 +116,7 @@ export const login = (data) => async (dispatch) => {
   dispatch(userSlice.actions.loginRequest());
   try {
     const loginResponse = await axios.post(
-      "http://localhost:4000/api/v1/user/login",
+      "https://scout-bbc2.onrender.com/api/v1/user/login",
       data,
       {
         withCredentials: true,
@@ -159,7 +159,7 @@ export const getUser = () => async (dispatch) => {
 
   try {
     const response = await axios.get(
-      "https://scout-ui-2an4.onrender.com/api/v1/user/getuser",
+      "https://scout-bbc2.onrender.com/api/v1/user/getuser",
       {
         withCredentials: true,
       }
