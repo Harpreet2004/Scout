@@ -48,7 +48,7 @@ const updateProfileSlice = createSlice({
 export const updateProfile = (data) => async(dispatch) => {
     dispatch(updateProfileSlice.actions.updateProfileRequest());
     try {
-        const response = await axios.put("http://localhost:4000/api/v1/user/update/profile",
+        const response = await axios.put("https://scout-bbc2.onrender.com/api/v1/user/update/profile",
             data,
             {
                 withCredentials:true,
@@ -66,7 +66,7 @@ export const updateProfile = (data) => async(dispatch) => {
 export const updateUserPassword = (data) => async(dispatch) => {
     dispatch(updateProfileSlice.actions.updatePasswordRequest());
     try {
-        const response = await axios.put("http://localhost:4000/api/v1/user/update/password",
+        const response = await axios.put("https://scout-bbc2.onrender.com/api/v1/user/update/password",
             data,
             {
                 withCredentials:true,
